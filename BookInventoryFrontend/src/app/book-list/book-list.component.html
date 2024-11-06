@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<div class="container">
+  <h2>Book Inventory</h2>
+  <ul>
+    <li *ngFor="let book of books">
+      {{ book.title }} by {{ book.author }}
+      <button (click)="deleteBook(book.id)">Delete</button>
+      <a [routerLink]="['/book', book.id]">Details</a>
+    </li>
+  </ul>
+  <a routerLink="/add-book">Add New Book</a>
+</div>
